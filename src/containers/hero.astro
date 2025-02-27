@@ -1,0 +1,58 @@
+---
+import { Button } from "@/components/starwind/button";
+import heroImage from "@/assets/vicki.webp";
+import { Image } from "astro:assets";
+import Section from "@/components/section.astro";
+import ChevronDown from "@tabler/icons/outline/chevron-down.svg";
+import web from "@/assets/cw_0007_f.webp";
+---
+
+<Section class="pt-8">
+  <div
+    class="relative flex flex-col md:flex-row-reverse items-center justify-center z-10"
+  >
+    <!-- Left -->
+    <div class="z-10">
+      <Image
+        src={heroImage}
+        alt="Vicki Voland"
+        width={500}
+        layout="none"
+        class="max-h-[18.75rem] object-contain md:max-h-[31.25rem]"
+      />
+    </div>
+
+    <!-- Right -->
+    <div class="flex flex-col justify-center text-center items-center z-10">
+      <h1
+        class="text-[clamp(3.75rem,2.7273rem+5.1136vw,6rem)] whitespace-nowrap"
+      >
+        Vicki Voland
+      </h1>
+      <h2 class="text-[clamp(1.5rem,1.1591rem+1.7045vw,2.25rem)] -mt-2">
+        and the Goblins, Ghosts & Ghouls
+      </h2>
+
+      <div class="flex flex-col gap-4 mt-12">
+        <Button class="max-w-xs">Pre-order now</Button>
+        <Button variant="ghost" class="hover:bg-transparent" href="#about">
+          <span class="flex flex-col items-center gap-1">
+            More
+            <ChevronDown class="w-4 h-4" />
+          </span>
+        </Button>
+      </div>
+    </div>
+
+    <!-- Background -->
+    <div class="absolute left-1/2 -translate-x-1/2 z-0">
+      <Image
+        src={web}
+        alt="spider web"
+        width={500}
+        layout="none"
+        class="max-h-[18.75rem] object-contain md:max-h-[31.25rem] opacity-30"
+      />
+    </div>
+  </div>
+</Section>

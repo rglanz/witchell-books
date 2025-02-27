@@ -1,0 +1,46 @@
+---
+import Logo from "@/assets/logo.svg";
+import SocialButton from "@/components/social-button.astro";
+import Button from "@/components/starwind/button/Button.astro";
+---
+
+<div id="nav-container" class="fixed inset-0 z-50 w-full h-fit px-4 py-4 bac">
+  <div class="flex justify-between items-center max-w-8xl mx-auto w-full">
+    <!-- Logo -->
+    <div class="flex gap-2 items-center">
+      <Logo class="size-10" />
+      <p class="font-head text-xl xs:text-2xl">Witchell Books</p>
+    </div>
+
+    <div class="flex gap-6 items-center">
+      <!-- Social Icons -->
+      <div class="gap-2 hidden sm:flex">
+        <SocialButton variant="x" href="#" />
+        <SocialButton variant="instagram" href="#" />
+        <SocialButton variant="facebook" href="#" />
+      </div>
+
+      <!-- CTA -->
+      <Button class="px-4 xs:px-10 sm:px-20">Pre-order now</Button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function updateNav() {
+    const navContainer = document.querySelector("#nav-container");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        navContainer?.classList.remove("py-4", "backdrop-blur-xs");
+        navContainer?.classList.add("py-2", "backdrop-blur-xs");
+      } else {
+        navContainer?.classList.remove("py-2", "backdrop-blur-xs");
+        navContainer?.classList.add("py-4", "backdrop-blur-xs");
+      }
+    });
+  }
+
+  updateNav();
+  document.addEventListener("astro:after-swap", updateNav);
+</script>

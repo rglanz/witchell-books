@@ -1,0 +1,26 @@
+{
+  "tailwind": {
+    "css": "src/styles/starwind.css",
+    "baseColor": "gray",
+    "cssVariables": false
+  },
+  "componentDir": "src/components",
+  "components": [
+    {
+      "name": "button",
+      "version": "1.0.0"
+    },
+    {
+      "name": "input",
+      "version": "1.0.0"
+    },
+    {
+      "name": "label",
+      "version": "1.0.0"
+    },
+    {
+      "name": "alert",
+      "version": "1.0.0"
+    }
+  ]
+}

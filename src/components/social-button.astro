@@ -1,0 +1,31 @@
+---
+import Button from "@/components/starwind/button/Button.astro";
+import BrandX from "@tabler/icons/outline/brand-x.svg";
+import BrandInstagram from "@tabler/icons/outline/brand-instagram.svg";
+import BrandFacebook from "@tabler/icons/outline/brand-facebook.svg";
+
+type SocialButtonProps = {
+  variant: "x" | "instagram" | "facebook";
+  href: string;
+};
+
+const { variant = "x", href } = Astro.props as SocialButtonProps;
+
+const icons = {
+  x: BrandX,
+  instagram: BrandInstagram,
+  facebook: BrandFacebook,
+};
+
+const Icon = icons[variant];
+---
+
+<Button
+  class="rounded-full"
+  href={href}
+  variant="outline"
+  size="icon"
+  class="hover:bg-foreground/10 h-8 w-8"
+>
+  <Icon />
+</Button>
