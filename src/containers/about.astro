@@ -1,0 +1,69 @@
+---
+import Section from "@/components/section.astro";
+import Button from "@/components/starwind/button";
+import { Image } from "astro:assets";
+import vicki from "@/assets/vicki-griffin.webp";
+import cauldron from "@/assets/cauldron.webp";
+import pumpkins from "@/assets/pumpkins.webp";
+---
+
+<Section id="about" class="pt-0 md:pt-inherit">
+  <div
+    class="flex flex-col md:flex-row items-center justify-center md:justify-between gap-8"
+  >
+    <!-- Left -->
+    <div
+      class="w-[40em] md:w-[60em] min-h-[60em] relative text-[min(1.959vw,.745em)] md:text-[min(1.2vw,1em)]"
+    >
+      <Image
+        src={vicki}
+        alt="Vicki Griffin"
+        layout="none"
+        class="absolute -left-[4em] w-[26.4375em] h-[29.5625em] z-20"
+      />
+      <Image
+        src={cauldron}
+        alt="Cauldron with moon and smoke"
+        layout="none"
+        class="absolute top-[15em] left-0 w-[36.69em] h-[35.63em] z-10"
+      />
+      <Image
+        src={pumpkins}
+        alt="Jack-o-lanterns"
+        layout="none"
+        class="absolute bottom-[5em] right-0 w-[19.6em] h-[15.28em] z-0"
+      />
+    </div>
+
+    <!-- Right -->
+    <div class="w-3/4 mx-auto prose flex flex-col items-start">
+      <h2 class="leading-none font-sans">
+        Vicki Voland starts her new job on the witching hour… and quitting time
+        can’t come soon enough.
+      </h2>
+      <p class="md:text-xl">
+        After learning that she must take on a mystical responsibility, young
+        Vicki reluctantly leaves her friends and family for the Athenaeum, a
+        retirement home for elderly monsters. All is not right with the
+        Athenaeum however, and without any trace of magic within her, she is at
+        the mercy of the strange new world around her.
+      </p>
+      <p class="md:text-xl">
+        The Athenaeum is filled with mysterious rooms, odd creatures, and
+        ancient magics. The world has become a place of witch’s spells and
+        buttered beagles, trickster statues and hungry gryphons. A dire place of
+        goblins, ghosts & ghouls.
+      </p>
+      <p class="md:text-xl">
+        Danger looms for poor Vicki Voland, a hungry and foul beast awaits her
+        should she fail to pass the test that the Athenaeum requires of her.
+        With no one coming to save her, Vicki may have to rely on some new
+        monstrous friends to keep her alive, and she’ll need to learn the truth
+        about her friends back home if she is to truly become The Housekeeper.
+      </p>
+      <Button href="#" variant="primary" class="not-prose mt-6"
+        >Pre-order now</Button
+      >
+    </div>
+  </div>
+</Section>

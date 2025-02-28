@@ -1,0 +1,16 @@
+---
+const { href, class: className }: Record<string, any> = Astro.props;
+let attr: { target?: string; rel?: string } = {};
+
+if (
+  !href.includes(Astro.url.host) &&
+  !href.startsWith("/") &&
+  !href.startsWith("#")
+) {
+  attr["target"] = "_blank";
+  attr["rel"] = "noopener noreferrer";
+}
+---
+
+<!-- prettier-ignore -->
+<a href={href} class={className} {...attr}><slot /></a>

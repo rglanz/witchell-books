@@ -70,8 +70,8 @@
     --card-foreground: var(--color-neutral-950);
     --popover: var(--color-neutral-50);
     --popover-foreground: var(--color-neutral-950);
-    --primary: var(--color-blue-700);
-    --primary-foreground: var(--color-neutral-50);
+    --primary: var(--color-fuchsia-700);
+    --primary-foreground: var(--color-gray-50);
     --secondary: var(--color-fuchsia-700);
     --secondary-foreground: var(--color-neutral-50);
     --muted: var(--color-neutral-100);
@@ -88,7 +88,7 @@
     --error-foreground: var(--color-neutral-50);
     --border: var(--color-neutral-200);
     --input: var(--color-neutral-200);
-    --outline: var(--color-blue-600);
+    --outline: var(--color-fuchsia-400);
     --radius: 0.5rem;
   }
 
@@ -129,6 +129,7 @@
   }
   html {
     @apply bg-background text-foreground scheme-light dark:scheme-dark;
+    scroll-behavior: smooth;
   }
   button {
     @apply cursor-pointer;

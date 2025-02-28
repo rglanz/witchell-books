@@ -1,9 +1,9 @@
 .prose {
-  --prose-color: var(--color-gray-700);
-  --prose-heading-color: var(--color-gray-950);
-  --prose-strong-color: var(--color-gray-950);
-  --prose-link-color: var(--color-gray-950);
-  --prose-code-color: var(--color-gray-950);
+  --prose-color: var(--color-gray-200);
+  --prose-heading-color: var(--color-white);
+  --prose-strong-color: var(--color-white);
+  --prose-link-color: var(--color-white);
+  --prose-code-color: var(--color-white);
   --prose-marker-color: color-mix(
     in oklab,
     var(--color-gray-700) 25%,
@@ -57,7 +57,7 @@
   }
 
   color: var(--prose-color);
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
   line-height: 2;
 
   *:where(:not(.not-prose, .not-prose *))
@@ -66,7 +66,7 @@
   }
 
   h2:where(:not(.not-prose, .not-prose *)) {
-    font-size: var(--text-lg);
+    font-size: var(--text-4xl);
     line-height: calc(28 / 18);
     letter-spacing: -0.025em;
     color: var(--prose-code-color);

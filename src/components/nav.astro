@@ -32,11 +32,11 @@ import Button from "@/components/starwind/button/Button.astro";
 
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
-        navContainer?.classList.remove("py-4", "backdrop-blur-xs");
+        navContainer?.classList.remove("py-4", "backdrop-blur-none");
         navContainer?.classList.add("py-2", "backdrop-blur-xs");
       } else {
         navContainer?.classList.remove("py-2", "backdrop-blur-xs");
-        navContainer?.classList.add("py-4", "backdrop-blur-xs");
+        navContainer?.classList.add("py-4", "backdrop-blur-none");
       }
     });
   }

@@ -1,21 +1,17 @@
 ---
-import "@/styles/globals.css";
 import Head from "@/layouts/head.astro";
 import type { HeadProps } from "@/layouts/head.astro";
 import Nav from "@/components/nav.astro";
-// import CTA from "@/containers/cta.astro";
-// import { Footer } from "@/containers/footer.tsx";
+import Footer from "@/containers/footer.astro";
 import { siteName, siteDescription } from "@/utils/config";
+import "@/styles/globals.css";
 
 interface LayoutProps extends HeadProps {
   cta?: boolean;
 }
 
-const {
-  title = siteName,
-  description = siteDescription,
-  // cta = true,
-} = Astro.props as LayoutProps;
+const { title = siteName, description = siteDescription } =
+  Astro.props as LayoutProps;
 ---
 
 <!doctype html>
@@ -28,7 +24,6 @@ const {
     <main>
       <slot />
     </main>
-    <!-- {cta && <CTA />} -->
-    <!-- <Footer client:load /> -->
+    <Footer />
   </body>
 </html>
