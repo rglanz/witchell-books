@@ -7,11 +7,11 @@ import Form from "@/components/form/form.astro";
 
 <Section class="max-w-none relative md:pt-0">
   <div
-    class="flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 z-10"
+    class="flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 z-10 max-w-8xl mx-auto"
   >
     <!-- Left -->
     <div class="w-full z-10">
-      <h2 class="font-sans text-center max-w-xl">
+      <h2 class="font-sans text-center max-w-xl mx-auto">
         Stay up-to-date with the latest <span class="font-head"
           >Witchell Books</span
         > events and releases!
@@ -19,7 +19,7 @@ import Form from "@/components/form/form.astro";
     </div>
 
     <!-- Right -->
-    <div class="z-10">
+    <div class="z-10 w-full">
       <Form />
     </div>
   </div>
@@ -27,8 +27,8 @@ import Form from "@/components/form/form.astro";
   <!-- Background Image -->
   <Image
     src={bgImage}
-    alt="Purple ground"
+    alt="Purple fog over a forest floor"
     layout="none"
-    class="absolute inset-0 size-full object-cover z-0"
+    class="absolute inset-0 size-full object-cover z-0 max-w-none select-none"
   />
 </Section>

@@ -11,39 +11,40 @@ import { Image } from "astro:assets";
   name="Newsletter Form"
   method="post"
   data-netlify="true"
-  class="w-full max-w-[90%] md:max-w-md mx-auto"
 >
   <div
-    class="flex flex-col gap-8 items-center px-16 py-40 rounded-3xl relative z-10 bg-black/80 overflow-clip"
+    class="px-4 py-20 md:px-8 lg:px-16 md:py-32 lg:py-40 rounded-3xl relative z-10 bg-black/80 overflow-clip mx-auto max-w-md"
   >
-    <h3 class="text-3xl">Newsletter Sign Up</h3>
+    <div class="w-full max-w-xs flex flex-col gap-8 items-center mx-auto">
+      <h3 class="text-3xl">Newsletter Sign Up</h3>
 
-    <div class="flex flex-col gap-4 w-[20rem] max-w-full">
-      <!-- Name -->
-      <Label for="name">Name</Label>
-      <Input type="text" id="name" name="name" />
+      <div class="flex flex-col gap-4 w-full">
+        <!-- Name -->
+        <Label for="name">Name</Label>
+        <Input type="text" id="name" name="name" />
 
-      <!-- Email -->
-      <Label for="email">Email</Label>
-      <Input type="email" id="email" name="email" />
+        <!-- Email -->
+        <Label for="email">Email</Label>
+        <Input type="email" id="email" name="email" />
+      </div>
+
+      <!-- Honeypot -->
+      <Label for="bot-field" class="hidden" />
+      <Input type="hidden" id="bot-field" name="bot-field" />
+
+      <!-- Submit -->
+      <Button
+        type="submit"
+        class="bg-fuchsia-900 hover:bg-fuchsia-800 text-white w-full"
+        >Subscribe</Button
+      >
     </div>
-
-    <!-- Honeypot -->
-    <Label for="bot-field" class="hidden" />
-    <Input type="hidden" id="bot-field" name="bot-field" />
-
-    <!-- Submit -->
-    <Button
-      type="submit"
-      class="bg-fuchsia-900 hover:bg-fuchsia-800 text-white w-full"
-      >Subscribe</Button
-    >
 
     <Image
       src={bgImage}
       alt="Purple ground"
       layout="none"
-      class="absolute inset-0 size-full object-cover scale-150 top-0 -left-4 -z-10 opacity-70"
+      class="absolute inset-0 size-full object-cover scale-150 top-0 -left-4 -z-10 opacity-70 select-none"
     />
   </div>
 </form>
