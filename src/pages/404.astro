@@ -1,0 +1,34 @@
+---
+import Layout from "@/layouts/layout.astro";
+import Section from "@/components/section.astro";
+import cauldron from "@/assets/cauldron.webp";
+import { Image } from "astro:assets";
+import Button from "@/components/starwind/button";
+---
+
+<Layout>
+  <Section class="flex items-center justify-center pt-40">
+    <div
+      class="relative min-h-[50vh] h-[50vh] flex flex-col items-center justify-center"
+    >
+      <Image
+        src={cauldron}
+        alt="Cauldron with moon and smoke"
+        layout="none"
+        class="size-full max-w-lg object-contain opacity-50"
+      />
+
+      <div
+        class="absolute left-1/2 text-center -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col items-center"
+      >
+        <h1 class="text-6xl">404</h1>
+        <p class="text-3xl">Page not found</p>
+        <p class="mt-6">
+          The page you are looking for does not exist. It might have been moved
+          or deleted.
+        </p>
+        <Button href="/" class="mt-6">Back to Home</Button>
+      </div>
+    </div>
+  </Section>
+</Layout>

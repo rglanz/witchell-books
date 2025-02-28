@@ -11,15 +11,14 @@ type SectionProps = {
 const { id, halfHeight, prose, class: className } = Astro.props as SectionProps;
 ---
 
-<section id={id} class={className}>
-  <div
-    class={cn(
-      "w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 overflow-clip bg-background",
-      halfHeight ? "py-8 md:py-12 lg:py-16" : "py-16 md:py-20 lg:py-24",
-      prose && "prose",
-      className
-    )}
-  >
-    <slot />
-  </div>
+<section
+  id={id}
+  class={cn(
+    "w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 overflow-clip bg-background",
+    halfHeight ? "py-8 md:py-12 lg:py-16" : "py-16 md:py-20 lg:py-24",
+    prose && "prose",
+    className
+  )}
+>
+  <slot />
 </section>
