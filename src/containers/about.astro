@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import vicki from "@/assets/vicki-griffin.webp";
 import cauldron from "@/assets/cauldron.webp";
 import pumpkins from "@/assets/pumpkins.webp";
+import { preOrderUrl } from "@/utils/config";
 ---
 
 <Section id="about" class="pt-0 md:pt-inherit">
@@ -61,9 +62,15 @@ import pumpkins from "@/assets/pumpkins.webp";
         monstrous friends to keep her alive, and she’ll need to learn the truth
         about her friends back home if she is to truly become The Housekeeper.
       </p>
-      <Button href="#" variant="primary" class="not-prose mt-6 mx-auto md:mx-0"
-        >Pre-order now</Button
+      <Button
+        href={preOrderUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="primary"
+        class="not-prose mt-6 mx-auto md:mx-0"
       >
+        Pre-order now
+      </Button>
     </div>
   </div>
 </Section>

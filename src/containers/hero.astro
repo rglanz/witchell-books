@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import Section from "@/components/section.astro";
 import ChevronDown from "@tabler/icons/outline/chevron-down.svg";
 import web from "@/assets/cw_0007_f.webp";
+import { preOrderUrl } from "@/utils/config";
 ---
 
 <Section class="pt-12">
@@ -35,7 +36,14 @@ import web from "@/assets/cw_0007_f.webp";
       </h2>
 
       <div class="flex flex-col gap-4 mt-12">
-        <Button class="max-w-xs">Pre-order now</Button>
+        <Button
+          class="max-w-xs"
+          href={preOrderUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Pre-order now
+        </Button>
         <Button variant="ghost" class="hover:bg-transparent" href="#about">
           <span class="flex flex-col items-center gap-0 group">
             More
