@@ -4,14 +4,11 @@ import Input from "@/components/starwind/input";
 import Button from "@/components/starwind/button";
 import bgImage from "@/assets/cw_0021_f.webp";
 import { Image } from "astro:assets";
+
+const kit_api_key = import.meta.env.KIT_API_KEY;
 ---
 
-<form
-  id="newsletter-form"
-  name="Newsletter Form"
-  method="post"
-  data-netlify="true"
->
+<form id="newsletter-form" name="Newsletter Form" method="post">
   <div
     class="px-4 py-20 md:px-8 lg:px-16 md:py-32 lg:py-40 rounded-3xl relative z-10 bg-black/80 overflow-clip mx-auto max-w-md"
   >
@@ -20,12 +17,12 @@ import { Image } from "astro:assets";
 
       <div class="flex flex-col gap-4 w-full">
         <!-- Name -->
-        <Label for="name">Name</Label>
-        <Input type="text" id="name" name="name" />
+        <Label for="name">Full Name</Label>
+        <Input type="text" id="name" name="name" required />
 
         <!-- Email -->
         <Label for="email">Email</Label>
-        <Input type="email" id="email" name="email" />
+        <Input type="email" id="email" name="email" required />
       </div>
 
       <!-- Honeypot -->
@@ -36,8 +33,9 @@ import { Image } from "astro:assets";
       <Button
         type="submit"
         class="bg-fuchsia-900 hover:bg-fuchsia-800 text-white w-full"
-        >Subscribe</Button
       >
+        Subscribe
+      </Button>
     </div>
 
     <Image
@@ -48,3 +46,63 @@ import { Image } from "astro:assets";
     />
   </div>
 </form>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("newsletter-form");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const botField = document.getElementById("bot-field");
+
+      // Honeypot check - if bot field is filled, silently return
+      if (botField.value) {
+        return;
+      }
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+
+      if (!name || !email) {
+        alert("Please fill in all required fields");
+        return;
+      }
+
+      const firstName = name.split(" ")[0];
+      const lastName = name.split(" ").slice(1).join(" ");
+
+      try {
+        const response = await fetch("/.netlify/functions/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            email,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // Success
+          form.reset();
+          alert("Thank you for subscribing to our newsletter!");
+        } else {
+          // Handle error response
+          alert(
+            data.message || "Something went wrong. Please try again later."
+          );
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("Something went wrong. Please try again later.");
+      }
+    });
+  });
+</script>
