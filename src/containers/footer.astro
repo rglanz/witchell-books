@@ -2,16 +2,27 @@
 import Logo from "@/assets/logo.svg";
 import SocialButton from "@/components/social-button.astro";
 import Link from "@/components/link.astro";
+import MailIcon from "@tabler/icons/outline/mail.svg";
 ---
 
 <footer>
   <div class="flex flex-col max-w-8xl mx-auto w-full pt-8 pb-4 gap-4 px-4">
-    <div class="flex flex-wrap items-center justify-between">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
       <!-- Logo -->
       <a href="/" class="flex gap-2 items-center">
         <Logo class="size-10" />
         <p class="font-head text-xl xs:text-2xl">Witchell Books</p>
       </a>
+
+      <!-- Contact -->
+      <div class="flex gap-3 items-center">
+        <p class="font-semibold">Contact:</p>
+        <a
+          href="mailto:witchellbooks@gmail.com"
+          class="underline flex gap-0.5 items-center"
+          ><MailIcon class="size-4" />witchellbooks@gmail.com</a
+        >
+      </div>
 
       <!-- Social Icons -->
       <div class="flex gap-2">
@@ -30,8 +41,10 @@ import Link from "@/components/link.astro";
         </script>
         Witchell Books. All rights reserved. Designed by <Link
           href="https://cedarstudioswebdesign.com"
-          class="underline hover:text-[#3393a3]">Cedar Studios Web Design</Link
-        >.
+          class="underline hover:text-[#3393a3]"
+        >
+          Cedar Studios Web Design
+        </Link>.
       </p>
     </div>
   </div>
