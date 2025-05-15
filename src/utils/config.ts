@@ -3,7 +3,7 @@ const siteUrl = "https://witchellbooks.com/";
 const siteDescription =
   "Witchell Books transports young readers to a world steeped in magic and old folklore.";
 const ogImagePath = "/og-image.png";
-const preOrderUrl =
-  "https://www.barnesandnoble.com/w/vicki-voland-and-the-goblins-ghosts-ghouls-s-p-witchell/1147023056";
+const orderUrl =
+  "https://shop.ingramspark.com/b/084?params=XEf6flhGHzexMqR3NzVxPQdeWmqNWhhjiaa4Zc5H9j1";
 
-export { siteName, siteUrl, siteDescription, ogImagePath, preOrderUrl };
+export { siteName, siteUrl, siteDescription, ogImagePath, orderUrl };

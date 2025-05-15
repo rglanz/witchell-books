@@ -2,7 +2,7 @@
 import Logo from "@/assets/logo.svg";
 import SocialButton from "@/components/social-button.astro";
 import Button from "@/components/starwind/button/Button.astro";
-import { preOrderUrl } from "@/utils/config";
+import { orderUrl } from "@/utils/config";
 ---
 
 <div id="nav-container" class="fixed inset-0 z-50 w-full h-fit px-4 py-4 bac">
@@ -24,11 +24,11 @@ import { preOrderUrl } from "@/utils/config";
       <!-- CTA -->
       <Button
         class="px-4 xs:px-10 sm:px-20"
-        href={preOrderUrl}
+        href={orderUrl}
         rel="noopener noreferrer"
         target="_blank"
       >
-        Pre-order now
+        Order now
       </Button>
     </div>
   </div>

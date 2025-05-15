@@ -5,12 +5,12 @@ import { Image } from "astro:assets";
 import vicki from "@/assets/vicki-griffin.webp";
 import cauldron from "@/assets/cauldron.webp";
 import pumpkins from "@/assets/pumpkins.webp";
-import { preOrderUrl } from "@/utils/config";
+import { orderUrl } from "@/utils/config";
 ---
 
 <Section id="about" class="pt-0 md:pt-inherit">
   <div
-    class="flex flex-col md:flex-row items-center justify-center md:justify-between gap-8"
+    class="flex flex-row items-center justify-center md:justify-between gap-8"
   >
     <!-- Left -->
     <div
@@ -63,13 +63,13 @@ import { preOrderUrl } from "@/utils/config";
         about her friends back home if she is to truly become The Housekeeper.
       </p>
       <Button
-        href={preOrderUrl}
+        href={orderUrl}
         target="_blank"
         rel="noopener noreferrer"
         variant="primary"
         class="not-prose mt-6 mx-auto md:mx-0"
       >
-        Pre-order now
+        Order now
       </Button>
     </div>
   </div>
