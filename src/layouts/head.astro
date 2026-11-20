@@ -64,3 +64,16 @@ const { title, description } = Astro.props as HeadProps;
 <ClientRouter fallback="none" />
 
 <!-- Analytics -->
+<script>
+  if (import.meta.env.PROD) {
+    document.addEventListener("astro:page-load", () => {
+      void fetch("/.netlify/functions/pageview", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ path: window.location.pathname }),
+        keepalive: true,
+        credentials: "omit",
+      }).catch(() => {});
+    });
+  }
+</script>

@@ -1,4 +1,6 @@
-exports.handler = async (event, context) => {
+import { postAnalytics } from "../lib/analytics.mjs";
+
+export const handler = async (event) => {
   // Ensure this is a POST request
   if (event.httpMethod !== "POST") {
     return {
@@ -39,6 +41,20 @@ exports.handler = async (event, context) => {
     const data = await response.json();
 
     if (response.ok) {
+      try {
+        const result = await postAnalytics("/webhooks/forms", {
+          name: [firstName, lastName].filter(Boolean).join(" "),
+          email,
+        });
+        if (!result) {
+          console.error("Form webhook configuration is missing or invalid");
+        } else if (!result.ok) {
+          console.error(`Form webhook returned HTTP ${result.status}`);
+        }
+      } catch (error) {
+        console.error("Error forwarding newsletter signup:", error);
+      }
+
       return {
         statusCode: 200,
         body: JSON.stringify({ message: "Subscription successful" }),
